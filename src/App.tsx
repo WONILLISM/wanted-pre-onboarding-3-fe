@@ -1,11 +1,21 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import LoginWithMockAPI from './pages/LoginWithMockAPI'
+import JWTLogin from './pages/2-1/JWTLogin'
+import JWTLoginWithLocalStorage from './pages/2-2/JWTLoginWithLocalStorage'
+import AutoLogin from './pages/2-2/AutoLogin'
 import './App.css'
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <LoginWithMockAPI/>,
+    element: <JWTLogin/>,
+  },
+  {
+    path: "/local-storage",
+    element: <JWTLoginWithLocalStorage/>,
+  },
+  {
+    path: "/other-page",
+    element: <AutoLogin/>,
   },
 ]);
 
