@@ -17,6 +17,12 @@ const Login = () => {
     const formData = new FormData(event.currentTarget);
 
     // TODO 3-2.: 이미 로그인된 상태라면 page-a로 라우팅
+    const userProfileResponse = await getCurrentUserInfo();
+
+    if (userProfileResponse !== null) {
+      routeTo("/page-a");
+      return;
+    }
 
     const loginResult = await login({
       username: formData.get("username") as string,
